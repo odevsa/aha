@@ -1,0 +1,10 @@
+- name: Print username
+  ansible.builtin.debug:
+    msg: "Username: {{ username }}"
+
+- name: check updates
+  pacman: 
+   update_cache: yes
+   upgrade: yes
+
+- include_tasks: core.yml
