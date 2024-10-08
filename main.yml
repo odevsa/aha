@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: hosts
   become: true
   roles:
       - common 

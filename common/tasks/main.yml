@@ -8,3 +8,15 @@
    upgrade: yes
 
 - include_tasks: core.yml
+
+- include_tasks: nvidia.yml
+
+- include_tasks: fonts.yml
+
+- include_tasks: applications.yml
+
+- include_tasks: display-manager.yml
+
+- include_tasks: hyprland.yml
+
+- include_tasks: dotfiles.yml

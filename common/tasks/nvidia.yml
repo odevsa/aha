@@ -1,0 +1,19 @@
+- name: Install Nvidia drivers
+  pacman:
+    name:
+      - nvidia
+      - nvidia-utils
+      - nvidia-prime
+    state: present
+
+###################################################
+# TODO: Nvidia DRM kernel mode setting
+###################################################
+# [EDIT] /etc/mkinitcpio.conf
+# MODULES=(... nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+
+# [CREATE] /etc/modprobe.d/nvidia.conf
+# options nvidia_drm modeset=1 fbdev=1
+
+# sudo mkinitcpio -P
+# sudo reboot

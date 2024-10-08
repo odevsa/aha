@@ -1,0 +1,46 @@
+- name: Install terminal applications
+  pacman:
+    name:
+      - btop
+      - nvtop
+      - cmatrix
+      - fastfetch
+      - neovim
+    state: present
+
+- name: Install graphical applications
+  pacman:
+    name:
+      - chromium
+      - code
+      - gimp
+      - inkscape
+      - blender
+      - freecad
+    state: present
+    
+- name: Install LazyVim dependencies
+  pacman:
+    name:
+      - fish
+      - fd
+      - lua
+      - luarocks
+      - lazygit
+      - tree-sitter
+    state: present
+
+###################################################
+# TODO: LAZYVIM
+###################################################
+# sudo npm install -S neovim
+# git clone https://github.com/LazyVim/starter ~/.config/nvim
+# rm -rf ~/.config/nvim/.git
+
+###################################################
+# TODO: OH-MY-POSH
+###################################################
+# curl -s https://ohmyposh.dev/install.sh | bash -s
+# printf "\n\n" >> ~/.bashrc
+# echo 'PATH=${HOME}/.local/bin:${PATH}' >> ~/.bashrc
+# echo 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"' >> ~/.bashrc

@@ -1,0 +1,54 @@
+- name: Install Hyprland dependencies
+  pacman:
+    name:
+      - polkit
+      - egl-wayland
+      - alsa-utils
+      - pamixer
+      - playerctl
+      - brightnessctl
+      - libnotify
+      - xdg-desktop-portal-wlr
+      - xdg-desktop-portal-gtk
+      - networkmanager
+      - bluez-utils
+      - blueman
+      - dunst
+    state: present
+
+- name: Install Hyprland and utilities
+  pacman:
+    name:
+      - hyprland
+      - hyprpicker
+      - waybar
+      - rofi
+      - swww
+      - swaylock
+      - nwg-bar
+      - wl-clipboard
+      - network-manager-applet
+      - bluez
+      - alacritty
+      - thunar 
+    state: present
+
+
+###################################################
+# TODO: Enable services
+###################################################
+# sudo systemctl enable NetworkManager
+# sudo systemctl start NetworkManager
+
+# sudo systemctl enable bluetooth
+# sudo systemctl start bluetooth
+
+###################################################
+# TODO: Copy /etc/greetd from ./files
+###################################################
+
+###################################################
+# TODO: Boot quiet
+###################################################
+# [EDIT] /boot/loader/entries/*linux.conf
+# options root=... quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
