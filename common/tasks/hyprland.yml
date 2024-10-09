@@ -26,11 +26,14 @@
       - swww
       - swaylock
       - nwg-bar
-      - wl-clipboard
       - network-manager-applet
       - bluez
       - alacritty
-      - thunar 
+      - thunar
+      - wl-clipboard
+      - grim
+      - slurp
+      - sox
     state: present
 
 
