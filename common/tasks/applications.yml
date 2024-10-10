@@ -33,6 +33,7 @@
 ###################################################
 # TODO: LAZYVIM
 ###################################################
+# rm -rf ~/.config/nvim
 # sudo npm install -S neovim
 # git clone https://github.com/LazyVim/starter ~/.config/nvim
 # rm -rf ~/.config/nvim/.git

@@ -8,8 +8,11 @@
       - playerctl
       - brightnessctl
       - libnotify
-      - xdg-desktop-portal-wlr
+      - qt5-wayland
+      - qt6-wayland
+      - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-kde
       - networkmanager
       - bluez-utils
       - blueman
@@ -29,7 +32,10 @@
       - network-manager-applet
       - bluez
       - alacritty
-      - thunar
+      - nemo
+      - ark
+      - gedit
+      - imv
       - wl-clipboard
       - grim
       - slurp
