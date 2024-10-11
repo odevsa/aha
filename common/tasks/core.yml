@@ -1,38 +1,41 @@
-- name: Install general packages
-  pacman:
-    name:
-      - curl
-      - wget
-      - jq
-      - nano
-    state: present
+---
+- block:
+    - name: Install general packages
+      pacman:
+        name:
+          - curl
+          - wget
+          - jq
+          - nano
+        state: present
 
-- name: Install archive packages
-  pacman:
-    name:
-      - p7zip
-      - unrar
-      - unzip
-      - xz
-      - zip
-      - bzip2
-      - gzip
-      - tar
-    state: present
+    - name: Install archive packages
+      pacman:
+        name:
+          - p7zip
+          - unrar
+          - unzip
+          - xz
+          - zip
+          - bzip2
+          - gzip
+          - tar
+        state: present
 
-- name: Install multimedia packages
-  pacman:
-    name:
-      - qt6-multimedia-ffmpeg
-    state: present
+    - name: Install multimedia packages
+      pacman:
+        name:
+          - qt6-multimedia-ffmpeg
+        state: present
 
-- name: Install development packages
-  pacman:
-    name:
-      - base-devel
-      - git
-      - python
-      - cargo
-      - nodejs
-      - npm
-    state: present
+    - name: Install development packages
+      pacman:
+        name:
+          - base-devel
+          - git
+          - python
+          - cargo
+          - nodejs
+          - npm
+        state: present
+  become: true

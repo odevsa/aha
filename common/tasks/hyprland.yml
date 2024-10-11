@@ -1,63 +1,81 @@
-- name: Install Hyprland dependencies
-  pacman:
-    name:
-      - polkit
-      - egl-wayland
-      - alsa-utils
-      - pamixer
-      - playerctl
-      - brightnessctl
-      - libnotify
-      - qt5-wayland
-      - qt6-wayland
-      - xdg-desktop-portal-hyprland
-      - xdg-desktop-portal-gtk
-      - xdg-desktop-portal-kde
-      - networkmanager
-      - bluez-utils
-      - blueman
-      - dunst
-    state: present
+---
+- block:
+    - name: Install Hyprland dependencies
+      pacman:
+        name:
+          - polkit
+          - egl-wayland
+          - alsa-utils
+          - pamixer
+          - playerctl
+          - brightnessctl
+          - libnotify
+          - qt5-wayland
+          - qt6-wayland
+          - xdg-desktop-portal-hyprland
+          - xdg-desktop-portal-gtk
+          - xdg-desktop-portal-kde
+          - networkmanager
+          - bluez-utils
+          - blueman
+          - dunst
+        state: present
 
-- name: Install Hyprland and utilities
-  pacman:
-    name:
-      - hyprland
-      - hyprpicker
-      - waybar
-      - rofi
-      - swww
-      - swaylock
-      - nwg-bar
-      - network-manager-applet
-      - bluez
-      - alacritty
-      - nemo
-      - ark
-      - kate
-      - imv
-      - wl-clipboard
-      - grim
-      - slurp
-      - sox
-    state: present
+    - name: Install Hyprland and utilities
+      pacman:
+        name:
+          - hyprland
+          - hyprpicker
+          - waybar
+          - rofi
+          - swww
+          - swaylock
+          - nwg-bar
+          - network-manager-applet
+          - bluez
+          - alacritty
+          - nemo
+          - ark
+          - kate
+          - imv
+          - wl-clipboard
+          - grim
+          - slurp
+          - sox
+        state: present
+  become: true
 
+- block:
+    - name: Enable and start the service NetworkManager
+      systemd:
+        name: NetworkManager
+        enabled: yes
+        state: started
 
-###################################################
-# TODO: Enable services
-###################################################
-# sudo systemctl enable NetworkManager
-# sudo systemctl start NetworkManager
+    - name: Enable and start the service bluetooth
+      systemd:
+        name: bluetooth
+        enabled: yes
+        state: started
+  become: true
 
-# sudo systemctl enable bluetooth
-# sudo systemctl start bluetooth
+- block:
+    - name: Copy greetd configuration files
+      copy:
+        src: common/files/etc/greetd/
+        dest: /etc/greetd/
+        remote_src: yes
 
-###################################################
-# TODO: Copy /etc/greetd from ./files
-###################################################
+    - name: Update greetd config.toml to set the user
+      lineinfile:
+        path: /etc/greetd/config.toml
+        regexp: '^user = '
+        line: 'user = "{{ username }}"'
+  become: true
+
 
 ###################################################
 # TODO: Boot quiet
 ###################################################
 # [EDIT] /boot/loader/entries/*linux.conf
-# options root=... quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
+# options  ... quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3

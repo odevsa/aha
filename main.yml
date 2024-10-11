@@ -1,4 +1,5 @@
-- hosts: hosts
-  become: true
+---
+- name: Arch + Hyprland
+  hosts: hosts
   roles:
-      - common 
+    - common

@@ -1,6 +1,9 @@
-- name: Install fonts
-  pacman:
-    name:
-      - ttf-font-awesome
-      - ttf-firacode-nerd
-    state: present
+---
+- block:
+  - name: Install fonts
+    pacman:
+      name:
+        - ttf-font-awesome
+        - ttf-firacode-nerd
+      state: present
+  become: true

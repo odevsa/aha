@@ -1,12 +1,15 @@
-- name: Install login manager
-  pacman:
-    name:
-      - greetd
-      - greetd-regreet
-    state: present
+---
+- block:
+  - name: Install login manager
+    pacman:
+      name:
+        - greetd
+        - greetd-regreet
+      state: present
 
-###################################################
-# TODO: Enable services
-###################################################
-# sudo systemctl enable greetd
-# sudo systemctl start greetd
+  - name: Enable and start the service greetd
+    systemd:
+      name: greetd
+      enabled: yes
+      state: started
+  become: true

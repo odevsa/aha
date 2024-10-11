@@ -1,11 +1,15 @@
-- name: Print username
-  ansible.builtin.debug:
-    msg: "Username: {{ username }}"
+---
+- block:
+    - name: Update package cache
+      pacman:
+        update_cache: yes
 
-- name: check updates
-  pacman: 
-   update_cache: yes
-   upgrade: yes
+    - name: Upgrade all installed packages
+      pacman:
+        upgrade: yes
+  become: true
+
+- include_tasks: dotfiles.yml
 
 - include_tasks: core.yml
 
@@ -18,5 +22,3 @@
 - include_tasks: display-manager.yml
 
 - include_tasks: hyprland.yml
-
-- include_tasks: dotfiles.yml

@@ -15,5 +15,5 @@ git clone https://github.com/raphaelbruno/arch-hyprland-ansible.git
 
 cd arch-hyprland-ansible
 
-ansible-playbook -i hosts -K main.yml
+ansible-playbook --ask-become-pass main.yml
 ```

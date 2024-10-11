@@ -1,3 +1,52 @@
-###################################################
-# TODO: Copy dotfiles from: https://github.com/raphaelbruno/dotfiles
-###################################################
+---
+- block:
+    - name: Clone dotfiles from repository
+      git:
+        repo: 'https://github.com/raphaelbruno/dotfiles'
+        dest: ~/dotfiles
+        update: true
+
+    - name: Remove existing ~/.config
+      file:
+        path: ~/.config
+        state: absent
+      
+    - name: Copy dotfiles to ~/
+      copy:
+        src: ~/dotfiles/
+        dest: ~/
+        remote_src: true
+
+    - name: Remove ~/dotfiles
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - ~/dotfiles
+        - ~/.git
+
+  become: false
+
+- block:
+    - name: Clone dotfiles from repository
+      git:
+        repo: https://github.com/raphaelbruno/dotfiles
+        dest: /root/dotfiles
+        clone: true
+
+    - name: Remove existing /root/.config/oh-my-posh/
+      file:
+        path: /root/.config/oh-my-posh/
+        state: absent
+
+    - name: Copy oh-my-posh configuration to root
+      copy:
+        src: /root/dotfiles/.config/oh-my-posh/
+        dest: /root/.config/oh-my-posh/
+        remote_src: true
+
+    - name: Remove /root/dotfiles
+      file:
+        path: /root/dotfiles
+        state: absent
+  become: true

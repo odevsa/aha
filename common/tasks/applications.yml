@@ -1,47 +1,112 @@
-- name: Install terminal applications
-  pacman:
-    name:
-      - btop
-      - nvtop
-      - cmatrix
-      - fastfetch
-      - neovim
-    state: present
+---
+- block:
+    - name: Install terminal applications
+      pacman:
+        name:
+          - btop
+          - nvtop
+          - cmatrix
+          - fastfetch
+          - neovim
+        state: present
 
-- name: Install graphical applications
-  pacman:
-    name:
-      - chromium
-      - code
-      - gimp
-      - inkscape
-      - blender
-      - freecad
-    state: present
-    
-- name: Install LazyVim dependencies
-  pacman:
-    name:
-      - fish
-      - fd
-      - lua
-      - luarocks
-      - lazygit
-      - tree-sitter
-    state: present
+    - name: Install graphical applications
+      pacman:
+        name:
+          - chromium
+          - code
+          - gimp
+          - inkscape
+          - blender
+          - freecad
+        state: present
+        
+    - name: Install LazyVim dependencies
+      pacman:
+        name:
+          - fish
+          - fd
+          - lua
+          - luarocks
+          - lazygit
+          - tree-sitter
+        state: present
+  become: true
 
-###################################################
-# TODO: LAZYVIM
-###################################################
-# rm -rf ~/.config/nvim
-# sudo npm install -S neovim
-# git clone https://github.com/LazyVim/starter ~/.config/nvim
-# rm -rf ~/.config/nvim/.git
+- block:
+    - name: Remove existing Neovim configuration
+      file:
+        path: ~/.config/nvim
+        state: absent
 
-###################################################
-# TODO: OH-MY-POSH
-###################################################
-# curl -s https://ohmyposh.dev/install.sh | bash -s
-# printf "\n\n" >> ~/.bashrc
-# echo 'PATH=${HOME}/.local/bin:${PATH}' >> ~/.bashrc
-# echo 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"' >> ~/.bashrc
+    - name: Install Neovim via npm
+      npm:
+        name: neovim
+        global: yes
+
+    - name: Clone the LazyVim repository
+      git:
+        repo: https://github.com/LazyVim/starter
+        dest: ~/.config/nvim
+        clone: yes
+
+    - name: Remove the .git directory from LazyVim
+      file:
+        path: ~/.config/nvim/.git
+        state: absent
+  become: false
+  name: Install LazyVim
+
+- block:
+    - name: Install Oh My Posh
+      shell: |
+        curl -s https://ohmyposh.dev/install.sh | bash -s
+      ignore_errors: true
+
+    - name: Ensure .bashrc exists
+      file:
+        path: ~/.bashrc
+        state: touch
+
+    - name: Add Oh My Posh to .bashrc
+      lineinfile:
+        path: ~/.bashrc
+        line: "{{ item }}"
+        state: present
+      loop:
+        - 'PATH=${HOME}/.local/bin:${PATH}'
+        - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
+
+    - name: Ensure changes to .bashrc are applied
+      shell: source ~/.bashrc
+      args:
+        executable: /bin/bash
+  become: true
+  name: Install Oh My Posh
+
+- block:
+    - name: Install Oh My Posh
+      shell: |
+        curl -s https://ohmyposh.dev/install.sh | bash -s
+      ignore_errors: true
+
+    - name: Ensure .bashrc exists
+      file:
+        path: ~/.bashrc
+        state: touch
+
+    - name: Add Oh My Posh to .bashrc
+      lineinfile:
+        path: ~/.bashrc
+        line: "{{ item }}"
+        state: present
+      loop:
+        - 'PATH=${HOME}/.local/bin:${PATH}'
+        - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
+
+    - name: Ensure changes to .bashrc are applied
+      shell: source ~/.bashrc
+      args:
+        executable: /bin/bash
+  become: false
+  name: Install Oh My Posh
