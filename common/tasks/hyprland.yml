@@ -19,6 +19,7 @@
           - bluez-utils
           - blueman
           - dunst
+          - gnome-themes-extra
         state: present
 
     - name: Install Hyprland and utilities
@@ -36,7 +37,6 @@
           - alacritty
           - nemo
           - ark
-          - kate
           - imv
           - wl-clipboard
           - grim
@@ -69,21 +69,21 @@
     - name: Update greetd config.toml to set the user
       lineinfile:
         path: /etc/greetd/config.toml
-        regexp: '^user = '
-        line: "user = \"{{ lookup('env', 'USER') }}\""
+        regexp: "^user = "
+        line: 'user = "{{ lookup(''env'', ''USER'') }}"'
   become: true
 
 - block:
     - name: Find Linux entries
       find:
         paths: /boot/loader/entries/
-        patterns: '*linux*.conf'
+        patterns: "*linux*.conf"
       register: linux_entries
 
     - name: Update boot entry for quiet mode
       lineinfile:
         path: "{{ item.path }}"
-        regexp: '^(options.*)$'
+        regexp: "^(options.*)$"
         line: \1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
         backrefs: true
       loop: "{{ linux_entries.files }}"

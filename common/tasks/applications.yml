@@ -14,13 +14,13 @@
       pacman:
         name:
           - chromium
-          - code
+          - zed
           - gimp
           - inkscape
           - blender
           - freecad
         state: present
-        
+
     - name: Install LazyVim dependencies
       pacman:
         name:
@@ -74,7 +74,7 @@
         line: "{{ item }}"
         state: present
       loop:
-        - 'PATH=${HOME}/.local/bin:${PATH}'
+        - "PATH=${HOME}/.local/bin:${PATH}"
         - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
 
     - name: Ensure changes to .bashrc are applied
@@ -101,7 +101,7 @@
         line: "{{ item }}"
         state: present
       loop:
-        - 'PATH=${HOME}/.local/bin:${PATH}'
+        - "PATH=${HOME}/.local/bin:${PATH}"
         - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
 
     - name: Ensure changes to .bashrc are applied
