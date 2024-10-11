@@ -15,9 +15,6 @@
           - xdg-desktop-portal-hyprland
           - xdg-desktop-portal-gtk
           - xdg-desktop-portal-kde
-          - networkmanager
-          - bluez-utils
-          - blueman
           - dunst
           - gnome-themes-extra
         state: present
@@ -33,8 +30,10 @@
           - swaylock
           - nwg-bar
           - network-manager-applet
-          - bluez
+          - bluez-utils
+          - blueman
           - alacritty
+          - jq
           - nemo
           - ark
           - imv
@@ -43,20 +42,6 @@
           - slurp
           - sox
         state: present
-  become: true
-
-- block:
-    - name: Enable and start the service NetworkManager
-      systemd:
-        name: NetworkManager
-        enabled: true
-        state: started
-
-    - name: Enable and start the service bluetooth
-      systemd:
-        name: bluetooth
-        enabled: true
-        state: started
   become: true
 
 - block:
