@@ -27,6 +27,7 @@
           - waybar
           - rofi
           - swww
+          - swayidle
           - swaylock
           - nwg-bar
           - network-manager-applet
