@@ -10,6 +10,6 @@
   - name: Enable and start the service greetd
     systemd:
       name: greetd
-      enabled: yes
+      enabled: true
       state: started
   become: true

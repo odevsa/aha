@@ -49,13 +49,13 @@
     - name: Enable and start the service NetworkManager
       systemd:
         name: NetworkManager
-        enabled: yes
+        enabled: true
         state: started
 
     - name: Enable and start the service bluetooth
       systemd:
         name: bluetooth
-        enabled: yes
+        enabled: true
         state: started
   become: true
 
@@ -64,18 +64,27 @@
       copy:
         src: common/files/etc/greetd/
         dest: /etc/greetd/
-        remote_src: yes
+        remote_src: true
 
     - name: Update greetd config.toml to set the user
       lineinfile:
         path: /etc/greetd/config.toml
         regexp: '^user = '
-        line: 'user = "{{ username }}"'
+        line: "user = \"{{ lookup('env', 'USER') }}\""
   become: true
 
+- block:
+    - name: Find Linux entries
+      find:
+        paths: /boot/loader/entries/
+        patterns: '*linux*.conf'
+      register: linux_entries
 
-###################################################
-# TODO: Boot quiet
-###################################################
-# [EDIT] /boot/loader/entries/*linux.conf
-# options  ... quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
+    - name: Update boot entry for quiet mode
+      lineinfile:
+        path: "{{ item.path }}"
+        regexp: '^(options.*)$'
+        line: \1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
+        backrefs: true
+      loop: "{{ linux_entries.files }}"
+  become: true

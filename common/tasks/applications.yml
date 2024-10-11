@@ -42,13 +42,13 @@
     - name: Install Neovim via npm
       npm:
         name: neovim
-        global: yes
+        global: true
 
     - name: Clone the LazyVim repository
       git:
         repo: https://github.com/LazyVim/starter
         dest: ~/.config/nvim
-        clone: yes
+        clone: true
 
     - name: Remove the .git directory from LazyVim
       file:
