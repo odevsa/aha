@@ -28,7 +28,7 @@
           - rofi
           - swww
           - swayidle
-          - swaylock
+          - hyprlock
           - nwg-bar
           - network-manager-applet
           - bluez-utils
