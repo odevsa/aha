@@ -2,38 +2,26 @@
 - block:
     - name: Clone dotfiles from repository
       git:
-        repo: "https://github.com/raphaelbruno/dotfiles"
-        dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+        repo: "{{ dotfiles.url }}"
+        dest: /tmp/dotfiles
         update: true
-
-    - name: Remove existing ~/.config
-      file:
-        path: "{{ lookup('env', 'HOME') }}/.config"
-        state: absent
-
-    - name: Copy dotfiles to ~/
-      copy:
-        src: "{{ lookup('env', 'HOME') }}/dotfiles/"
-        dest: "{{ lookup('env', 'HOME') }}"
-        remote_src: true
-
-    - name: Remove ~/dotfiles
-      file:
-        path: "{{ item }}"
-        state: absent
-      with_items:
-        - "{{ lookup('env', 'HOME') }}/dotfiles"
-        - "{{ lookup('env', 'HOME') }}/.git"
-
   become: false
 
 - block:
-    - name: Clone dotfiles from repository
-      git:
-        repo: https://github.com/raphaelbruno/dotfiles
-        dest: /root/dotfiles
-        clone: true
+    - name: Remove existing ~/.config/
+      file:
+        path: "{{ lookup('env', 'HOME') }}/.config/"
+        state: absent
+      when: dotfiles.clear_before == true
 
+    - name: Copy dotfiles to ~/
+      copy:
+        src: /tmp/dotfiles/
+        dest: "{{ lookup('env', 'HOME') }}"
+        remote_src: true
+  become: false
+
+- block:
     - name: Remove existing /root/.config/oh-my-posh/
       file:
         path: /root/.config/oh-my-posh/
@@ -41,12 +29,17 @@
 
     - name: Copy oh-my-posh configuration to root
       copy:
-        src: /root/dotfiles/.config/oh-my-posh/
+        src: /tmp/dotfiles/.config/oh-my-posh/
         dest: /root/.config/oh-my-posh/
         remote_src: true
-
-    - name: Remove /root/dotfiles
-      file:
-        path: /root/dotfiles
-        state: absent
   become: true
+
+- block:
+    - name: Remove /tmp/dotfiles
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - "/tmp/dotfiles"
+        - "{{ lookup('env', 'HOME') }}/.git"
+  become: false

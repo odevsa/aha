@@ -3,18 +3,20 @@
     - name: Create AUR directory
       file:
         path: "{{ aur.directory }}"
-        owner: "{{ lookup(''env'', ''USER'') }}"
-        group: "{{ lookup(''env'', ''USER'') }}"
         state: directory
+  become: false
 
+- block:
     - name: Install AUR base packages
       aur:
+        dir: "{{ aur.directory }}"
         name: "{{ aur.packages }}"
-        user: "{{ lookup(''env'', ''USER'') }}"
+        user: "{{ lookup('env', 'USER') }}"
 
     - name: Install AUR google-chrome
       aur:
+        dir: "{{ aur.directory }}"
         name: google-chrome
-        user: "{{ lookup(''env'', ''USER'') }}"
-      when: browser == google-chrome
+        user: "{{ lookup('env', 'USER') }}"
+      when: browser == 'google-chrome'
   become: true

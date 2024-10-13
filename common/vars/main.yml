@@ -2,9 +2,9 @@
 browser: google-chrome # firefox, chromium, vivaldi, google-chrome (depends on aur.enable: true)
 
 dotfiles:
-  enable: true
+  install: true
+  clear_before: true
   url: https://github.com/raphaelbruno/dotfiles
-  rcup_flags: -fx README.md
 
 amdgpu:
   install: true
@@ -17,6 +17,7 @@ spacevim:
 
 aur:
   enable: true
-  directory: ~/.aur
+  directory: "{{ lookup('env', 'HOME') }}/.aur"
   packages:
     - yay
+    - visual-studio-code-bin
