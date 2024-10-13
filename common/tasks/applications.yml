@@ -13,6 +13,7 @@
     - name: Install graphical applications
       pacman:
         name:
+          - kalk
           - zed
           - gimp
           - inkscape
