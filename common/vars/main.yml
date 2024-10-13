@@ -1,0 +1,22 @@
+---
+browser: google-chrome # firefox, chromium, vivaldi, google-chrome (depends on aur.enable: true)
+
+dotfiles:
+  enable: true
+  url: https://github.com/raphaelbruno/dotfiles
+  rcup_flags: -fx README.md
+
+amdgpu:
+  install: true
+
+nvidia:
+  install: true
+
+spacevim:
+  install: true
+
+aur:
+  enable: true
+  directory: ~/.aur
+  packages:
+    - yay

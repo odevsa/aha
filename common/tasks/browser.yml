@@ -1,0 +1,23 @@
+---
+- block:
+    - name: Install browser firefox
+      pacman:
+        name:
+          - firefox
+        state: present
+      when: browser == 'firefox'
+
+    - name: Install browser chromium
+      pacman:
+        name:
+          - chromium
+        state: present
+      when: browser == 'chromium'
+
+    - name: Install browser vivaldi
+      pacman:
+        name:
+          - vivaldi
+        state: present
+      when: browser == 'vivaldi'
+  become: true

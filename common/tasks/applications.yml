@@ -13,7 +13,6 @@
     - name: Install graphical applications
       pacman:
         name:
-          - chromium
           - zed
           - gimp
           - inkscape
@@ -33,29 +32,29 @@
         state: present
   become: true
 
-- block:
-    - name: Remove existing Neovim configuration
-      file:
-        path: ~/.config/nvim
-        state: absent
+# - block:
+#     - name: Remove existing Neovim configuration
+#       file:
+#         path: "{{ lookup('env', 'HOME') }}/.config/nvim"
+#         state: absent
 
-    - name: Install Neovim via npm
-      npm:
-        name: neovim
-        global: true
+#     - name: Install Neovim via npm
+#       npm:
+#         name: neovim
+#         global: true
 
-    - name: Clone the LazyVim repository
-      git:
-        repo: https://github.com/LazyVim/starter
-        dest: ~/.config/nvim
-        clone: true
+#     - name: Clone the LazyVim repository
+#       git:
+#         repo: https://github.com/LazyVim/starter
+#         dest: "{{ lookup('env', 'HOME') }}/.config/nvim"
+#         clone: true
 
-    - name: Remove the .git directory from LazyVim
-      file:
-        path: ~/.config/nvim/.git
-        state: absent
-  become: false
-  name: Install LazyVim
+#     - name: Remove the .git directory from LazyVim
+#       file:
+#         path: "{{ lookup('env', 'HOME') }}/.config/nvim/.git"
+#         state: absent
+#   become: false
+#   name: Install LazyVim
 
 - block:
     - name: Install Oh My Posh
@@ -65,12 +64,12 @@
 
     - name: Ensure .bashrc exists
       file:
-        path: ~/.bashrc
+        path: "{{ lookup('env', 'HOME') }}/.bashrc"
         state: touch
 
     - name: Add Oh My Posh to .bashrc
       lineinfile:
-        path: ~/.bashrc
+        path: "{{ lookup('env', 'HOME') }}/.bashrc"
         line: "{{ item }}"
         state: present
       loop:
@@ -78,7 +77,7 @@
         - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
 
     - name: Ensure changes to .bashrc are applied
-      shell: source ~/.bashrc
+      shell: source "{{ lookup('env', 'HOME') }}/.bashrc"
       args:
         executable: /bin/bash
   become: true
@@ -92,12 +91,12 @@
 
     - name: Ensure .bashrc exists
       file:
-        path: ~/.bashrc
+        path: "{{ lookup('env', 'HOME') }}/.bashrc"
         state: touch
 
     - name: Add Oh My Posh to .bashrc
       lineinfile:
-        path: ~/.bashrc
+        path: "{{ lookup('env', 'HOME') }}/.bashrc"
         line: "{{ item }}"
         state: present
       loop:
@@ -105,7 +104,7 @@
         - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
 
     - name: Ensure changes to .bashrc are applied
-      shell: source ~/.bashrc
+      shell: source "{{ lookup('env', 'HOME') }}/.bashrc"
       args:
         executable: /bin/bash
   become: false

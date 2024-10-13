@@ -23,6 +23,9 @@
     - name: Install multimedia packages
       pacman:
         name:
+          - mesa
+          - vulkan-tools
+          - vulkan-intel
           - networkmanager
           - bluez
           - pipewire

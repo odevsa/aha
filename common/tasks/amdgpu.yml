@@ -1,0 +1,10 @@
+---
+- block:
+    - name: Install Nvidia drivers
+      pacman:
+        name:
+          - vulkan-radeon
+          - libva-mesa-driver
+          - mesa-vdpau
+        state: present
+  become: true

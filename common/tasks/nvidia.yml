@@ -6,6 +6,7 @@
           - nvidia
           - nvidia-utils
           - nvidia-prime
+          - primus_vk
         state: present
   become: true
 
