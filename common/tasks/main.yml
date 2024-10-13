@@ -12,26 +12,26 @@
 - include_tasks: dotfiles.yml
   when: dotfiles.install == true
 
-# - include_tasks: core.yml
+- include_tasks: core.yml
 
-# - include_tasks: amdgpu.yml
-#   when: amdgpu.install == true
+- include_tasks: amdgpu.yml
+  when: amdgpu.install == true
 
-# - include_tasks: nvidia.yml
-#   when: nvidia.install == true
+- include_tasks: nvidia.yml
+  when: nvidia.install == true
 
-# - include_tasks: fonts.yml
+- include_tasks: fonts.yml
 
-# - include_tasks: applications.yml
+- include_tasks: applications.yml
 
-# - include_tasks: browser.yml
+- include_tasks: browser.yml
 
-# - include_tasks: spacevim.yml
-#   when: spacevim.install == true
+- include_tasks: spacevim.yml
+  when: spacevim.install == true
 
-# - include_tasks: display-manager.yml
+- include_tasks: display-manager.yml
 
-# - include_tasks: hyprland.yml
+- include_tasks: hyprland.yml
 
-# - include_tasks: aur.yml
-#   when: aur.enable == true
+- include_tasks: aur.yml
+  when: aur.enable == true
