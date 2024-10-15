@@ -2,7 +2,7 @@
 - block:
     - name: Clone the auto-cpufreq repository
       git:
-        repo: https://github.com/AdnanHodzic/auto-cpufreq
+        repo: https://github.com/AdnanHodzic/auto-cpufreq.git
         dest: /tmp/auto-cpufreq
         update: true
 

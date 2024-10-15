@@ -15,7 +15,6 @@
       pacman:
         name:
           - kalk
-          - zed
           - gimp
           - inkscape
           - blender
@@ -29,57 +28,3 @@
         state: present
       when: aur.enable != true
   become: true
-
-- block:
-    - name: Install Oh My Posh
-      shell: |
-        curl -s https://ohmyposh.dev/install.sh | bash -s
-      ignore_errors: true
-
-    - name: Ensure .bashrc exists
-      file:
-        path: "/root/.bashrc"
-        state: touch
-
-    - name: Add Oh My Posh to .bashrc
-      lineinfile:
-        path: "/root/.bashrc"
-        line: "{{ item }}"
-        state: present
-      loop:
-        - "PATH=/root/.local/bin:${PATH}"
-        - 'eval "$(oh-my-posh init bash --config /root/.config/oh-my-posh/config.omp.json)"'
-
-    - name: Ensure changes to .bashrc are applied
-      shell: source "/root/.bashrc"
-      args:
-        executable: /bin/bash
-  become: true
-  name: Install Oh My Posh as root
-
-- block:
-    - name: Install Oh My Posh
-      shell: |
-        curl -s https://ohmyposh.dev/install.sh | bash -s
-      ignore_errors: true
-
-    - name: Ensure .bashrc exists
-      file:
-        path: "{{ lookup('env', 'HOME') }}/.bashrc"
-        state: touch
-
-    - name: Add Oh My Posh to .bashrc
-      lineinfile:
-        path: "{{ lookup('env', 'HOME') }}/.bashrc"
-        line: "{{ item }}"
-        state: present
-      loop:
-        - "PATH=${HOME}/.local/bin:${PATH}"
-        - 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.omp.json)"'
-
-    - name: Ensure changes to .bashrc are applied
-      shell: source "{{ lookup('env', 'HOME') }}/.bashrc"
-      args:
-        executable: /bin/bash
-  become: false
-  name: Install Oh My Posh

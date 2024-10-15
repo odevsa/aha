@@ -1,0 +1,68 @@
+---
+- block:
+    - name: Install ZSH
+      pacman:
+        name:
+          - zsh
+        state: present
+
+    - name: Change default shell
+      user:
+        name: "{{ lookup('env', 'USER') }}"
+        shell: /usr/bin/zsh
+
+    - name: Change default shell
+      user:
+        name: root
+        shell: /usr/bin/zsh
+
+  become: true
+
+- block:
+    - name: Install Oh My Posh
+      shell: |
+        curl -s https://ohmyposh.dev/install.sh | bash -s
+      ignore_errors: true
+
+    - name: Install Oh My Posh as root
+      shell: |
+        curl -s https://ohmyposh.dev/install.sh | bash -s
+      ignore_errors: true
+      become: false
+  become: false
+  name: Install Oh My Posh
+
+- block:
+    - name: Clone temporary oh-my-zsh
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: /tmp/.oh-my-zsh
+        update: true
+
+    - name: Clone temporary zsh-syntax-highlighting
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: /tmp/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+        update: true
+
+    - name: Clone temporary zsh-autosuggestions
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: /tmp/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+        update: true
+
+    - name: Copy oh-my-zsh to ~/
+      copy:
+        src: /tmp/.oh-my-zsh/
+        dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+        remote_src: true
+
+    - name: Copy oh-my-zsh to root
+      copy:
+        src: /tmp/.oh-my-zsh/
+        dest: "/root/.oh-my-zsh"
+        remote_src: true
+      become: true
+
+  become: false
+  name: Install Oh My Zsh

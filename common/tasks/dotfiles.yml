@@ -27,14 +27,15 @@
   become: false
 
 - block:
-    - name: Remove existing /root/.config/oh-my-posh/
-      file:
-        path: /root/.config/oh-my-posh/
-        state: absent
-
     - name: Copy oh-my-posh configuration to root
       copy:
         src: /tmp/dotfiles/.config/oh-my-posh/
         dest: /root/.config/oh-my-posh/
+        remote_src: true
+
+    - name: Copy .zshrc configuration to root
+      copy:
+        src: /tmp/dotfiles/.zshrc
+        dest: /root/.zshrc
         remote_src: true
   become: true
