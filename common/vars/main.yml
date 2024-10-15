@@ -15,6 +15,9 @@ nvidia:
 spacevim:
   install: true
 
+autocpufreq: # Laptop battery optimization
+  install: true
+
 aur:
   enable: true
   directory: "{{ lookup('env', 'HOME') }}/.aur"

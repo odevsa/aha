@@ -1,0 +1,16 @@
+---
+- block:
+    - name: Clone the auto-cpufreq repository
+      git:
+        repo: https://github.com/AdnanHodzic/auto-cpufreq
+        dest: /tmp/auto-cpufreq
+        update: true
+
+    - name: Install the auto-cpufreq
+      command: ./auto-cpufreq-installer --install
+      args:
+        chdir: /tmp/auto-cpufreq
+
+    - name: Install daemon for automatic CPU
+      command: "auto-cpufreq --install"
+  become: true
