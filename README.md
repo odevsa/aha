@@ -1,15 +1,21 @@
 # arch-hyprland-ansible
 
-- ArchLinux fresh install
-- Check internet connection
-
 ## Disclaimer
 
 This is for my personal use, if you want to try it, it`s for your own risk.
 
 ## What you will need
 
-Any distribution based on Arch Linux, preferably a clean installation of Arch Linux.
+- Any distribution based on Arch Linux, preferably a clean installation of Arch Linux.
+- Internet connection:
+  - Wifi with `iwctl`
+    ```
+      # TODO
+    ```
+  - Wifi with `NetworkManager`
+    ```
+      # TODO
+    ```
 
 ## Automatic Install
 
