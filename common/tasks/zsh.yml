@@ -21,15 +21,9 @@
 - block:
     - name: Install Oh My Posh
       shell: |
-        curl -s https://ohmyposh.dev/install.sh | bash -s
+        curl -s https://ohmyposh.dev/install.sh | bash -s -- -d /usr/bin
       ignore_errors: true
-
-    - name: Install Oh My Posh as root
-      shell: |
-        curl -s https://ohmyposh.dev/install.sh | bash -s
-      ignore_errors: true
-      become: false
-  become: false
+  become: true
   name: Install Oh My Posh
 
 - block:
