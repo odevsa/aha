@@ -31,8 +31,6 @@
 - include_tasks: spacevim.yml
   when: spacevim.install == true
 
-- include_tasks: display-manager.yml
-
 - include_tasks: hyprland.yml
 
 - include_tasks: autocpufreq.yml
@@ -40,3 +38,5 @@
 
 - include_tasks: aur.yml
   when: aur.enable == true
+
+- include_tasks: display-manager.yml
