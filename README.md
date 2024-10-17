@@ -5,7 +5,7 @@ My Dotfiles are here: https://github.com/raphaelbruno/dotfiles
 
 ## Disclaimer
 
-This is for my personal use, if you want to try it, it`s for your own risk.
+This is for my personal use and it's working in progress, so files can be deleted, things can break, etc. If you want to try it, it`s for your own risk.
 
 ## What you will need
 
