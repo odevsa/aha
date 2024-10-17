@@ -24,13 +24,13 @@ This is for my personal use, if you want to try it, it`s for your own risk.
 
 ## Before Install
 
-Maybe this have more applications then you need, so you may want do the `Manual Install` and modify the [common/vars/main.yml](common/vars/main.yml) file `Run ansible`
+Maybe this has more applications then you need, so you may want to do the `Manual Install` and modify the [common/vars/main.yml](common/vars/main.yml) file before `Run ansible`
 
 
 ## Automatic Install
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland-ansible/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland-ansible/main/install.sh)"
 ```
 
 ## Manual Install
