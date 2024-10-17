@@ -1,4 +1,7 @@
 # arch-hyprland-ansible
+A simple intallation of Hyprland with my Dotfiles into Arch Linux and automated by ansible.
+
+My Dotfiles are here: https://github.com/raphaelbruno/dotfiles
 
 ## Disclaimer
 
@@ -10,12 +13,19 @@ This is for my personal use, if you want to try it, it`s for your own risk.
 - Internet connection:
   - Wifi with `iwctl`
     ```
-      # TODO
+    $ iwctl
+
+    [iwctl]# station <DEVICE> connect "<SSID>"
     ```
   - Wifi with `NetworkManager`
     ```
-      # TODO
+    $ nmcli device wifi connect "<SSID>" --ask
     ```
+
+## Before Install
+
+Maybe this have more applications then you need, so you may want do the `Manual Install` and modify the [common/vars/main.yml](common/vars/main.yml) file `Run ansible`
+
 
 ## Automatic Install
 
