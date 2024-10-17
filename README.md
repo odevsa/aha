@@ -41,10 +41,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland
   sudo pacman -S git python ansible
   ```
 
-- Clone the repo
+- Clone the repo with submodules 
 
   ```
-  git clone https://github.com/raphaelbruno/arch-hyprland-ansible.git
+  git clone --recurse-submodules --remote-submodules https://github.com/raphaelbruno/arch-hyprland-ansible.git
   ```
 
 - Enter in folder
