@@ -5,6 +5,7 @@
         name:
           - nvidia
           - nvidia-utils
+          - lib32-nvidia-utils
           - nvidia-prime
           - primus_vk
         state: present

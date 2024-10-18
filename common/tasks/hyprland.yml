@@ -76,3 +76,19 @@
         backrefs: true
       loop: "{{ linux_entries.files }}"
   become: true
+  
+- block:
+    - name: Set chromium to use wayland
+      replace:
+        path: /usr/share/applications/chromium.desktop
+        regexp: "^(Exec=.*)$"
+        replace: \1 --enable-features=UseOzonePlatform --ozone-platform=wayland
+      when: browser == 'chromium'
+
+    - name: Set google-chrome to use wayland
+      replace:
+        path: /usr/share/applications/google-chrome.desktop
+        regexp: "^(Exec=.*)$"
+        replace: \1 --enable-features=UseOzonePlatform --ozone-platform=wayland
+      when: browser == 'google-chrome'
+  become: true

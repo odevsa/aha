@@ -36,12 +36,12 @@
 
 - include_tasks: browser.yml
 
-- include_tasks: hyprland.yml
-
 - include_tasks: autocpufreq.yml
   when: autocpufreq.install == true
 
 - include_tasks: aur.yml
   when: aur.enable == true
+
+- include_tasks: hyprland.yml
 
 - include_tasks: display-manager.yml
