@@ -41,6 +41,21 @@
         state: present
       when: application.graphical == true
     
+    - name: Install audio applications
+      pacman:
+        name:
+          - audacity
+        state: present
+      when: application.audio == true
+    
+    - name: Install video applications
+      pacman:
+        name:
+          - kdenlive
+          - obs-studio
+        state: present
+      when: application.video == true
+    
     - name: Install 3D applications
       pacman:
         name:
