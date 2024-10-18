@@ -11,20 +11,41 @@
           - neovim
         state: present
 
-    - name: Install graphical applications
+    - name: Install utilities applications
       pacman:
         name:
           - kalk
-          - gimp
-          - inkscape
-          - blender
-          - freecad
         state: present
+      when: application.utilities == true
+    
+    - name: Install development applications
+      pacman:
+        name:
+          - dbeaver
+          - docker
+        state: present
+      when: application.development == true
 
     - name: Install Code - OSS
       pacman:
         name:
           - code
         state: present
-      when: aur.enable != true
+      when: aur.enable != true and application.development == true
+
+    - name: Install graphical applications
+      pacman:
+        name:
+          - gimp
+          - inkscape
+        state: present
+      when: application.graphical == true
+    
+    - name: Install 3D applications
+      pacman:
+        name:
+          - blender
+          - freecad
+        state: present
+      when: application.three_dimensional == true
   become: true

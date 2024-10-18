@@ -1,0 +1,8 @@
+---
+- block:
+  - name: Install icons
+    pacman:
+      name:
+        - papirus-icon-theme
+      state: present
+  become: true

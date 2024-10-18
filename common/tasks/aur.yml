@@ -19,4 +19,11 @@
         name: google-chrome
         user: "{{ lookup('env', 'USER') }}"
       when: browser == 'google-chrome'
+
+    - name: Install AUR visual-studio-code-bin
+      aur:
+        dir: "{{ aur.directory }}"
+        name: visual-studio-code-bin
+        user: "{{ lookup('env', 'USER') }}"
+      when: application.development == true
   become: true

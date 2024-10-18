@@ -9,10 +9,13 @@ dotfiles:
 amdgpu:
   install: true
 
-nvidia:
-  install: true
+application:
+  utilities: true
+  development: true
+  graphical: true
+  three_dimensional: true
 
-spacevim:
+nvidia:
   install: true
 
 autocpufreq: # Laptop battery optimization
@@ -23,4 +26,3 @@ aur:
   directory: "{{ lookup('env', 'HOME') }}/.aur"
   packages:
     - yay
-    - visual-studio-code-bin

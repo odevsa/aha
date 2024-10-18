@@ -24,12 +24,14 @@
 
 - include_tasks: fonts.yml
 
+- include_tasks: icons.yml
+
 - include_tasks: applications.yml
 
-- include_tasks: browser.yml
-
 - include_tasks: spacevim.yml
-  when: spacevim.install == true
+  when: application.development == true
+
+- include_tasks: browser.yml
 
 - include_tasks: hyprland.yml
 
