@@ -22,7 +22,6 @@
       pacman:
         name:
           - dbeaver
-          - docker
         state: present
       when: application.development == true
 

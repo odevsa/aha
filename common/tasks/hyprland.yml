@@ -10,6 +10,8 @@
           - playerctl
           - brightnessctl
           - libnotify
+          - qt5ct
+          - qt6ct
           - qt5-wayland
           - qt6-wayland
           - xdg-desktop-portal-hyprland

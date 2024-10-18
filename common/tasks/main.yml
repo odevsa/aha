@@ -31,6 +31,9 @@
 - include_tasks: spacevim.yml
   when: application.development == true
 
+- include_tasks: docker.yml
+  when: application.development == true
+
 - include_tasks: browser.yml
 
 - include_tasks: hyprland.yml
