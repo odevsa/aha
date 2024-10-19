@@ -15,8 +15,6 @@
           - qt5-wayland
           - qt6-wayland
           - xdg-desktop-portal-hyprland
-          - xdg-desktop-portal-gtk
-          - xdg-desktop-portal-kde
           - dunst
           - gnome-themes-extra
         state: present
@@ -37,7 +35,7 @@
           - blueman
           - alacritty
           - jq
-          - nemo
+          - nautilus
           - ark
           - imv
           - wl-clipboard
@@ -92,3 +90,8 @@
         replace: \1 --enable-features=UseOzonePlatform --ozone-platform=wayland
       when: browser == 'google-chrome'
   become: true
+
+- block:
+    - name: Removing window buttons in Gnome
+      shell: gsettings set org.gnome.desktop.wm.preferences button-layout ":"
+  become: false

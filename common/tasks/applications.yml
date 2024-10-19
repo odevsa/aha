@@ -14,7 +14,17 @@
     - name: Install utilities applications
       pacman:
         name:
-          - kalk
+          - gnome-calculator
+          - gnome-connections
+          - gnome-weather
+          - gnome-calendar
+          - gnome-disk-utility
+          - baobab
+          - gnome-system-monitor
+          - gedit
+          - snapshot
+          - simple-scan
+          - evince
         state: present
       when: application.utilities == true
     

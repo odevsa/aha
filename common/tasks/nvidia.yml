@@ -8,6 +8,7 @@
           - lib32-nvidia-utils
           - nvidia-prime
           - primus_vk
+          - nvidia-settings
         state: present
   become: true
 
