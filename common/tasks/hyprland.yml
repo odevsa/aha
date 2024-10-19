@@ -14,7 +14,7 @@
           - qt6ct
           - qt5-wayland
           - qt6-wayland
-          - xdg-desktop-portal-hyprland
+          - xdg-desktop-portal-wlr
           - dunst
           - gnome-themes-extra
         state: present

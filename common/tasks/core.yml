@@ -30,6 +30,7 @@
           - bluez
           - pipewire
           - pipewire-pulse
+          - wireplumber
           - qt6-multimedia-ffmpeg
         state: present
 
