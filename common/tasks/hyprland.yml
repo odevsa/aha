@@ -10,10 +10,6 @@
           - playerctl
           - brightnessctl
           - libnotify
-          - qt5ct
-          - qt6ct
-          - qt5-wayland
-          - qt6-wayland
           - xdg-desktop-portal
           - xdg-desktop-portal-wlr
           - xdg-desktop-portal-gtk
@@ -37,8 +33,6 @@
           - blueman
           - alacritty
           - jq
-          - nautilus
-          - ark
           - imv
           - wl-clipboard
           - grim

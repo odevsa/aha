@@ -7,6 +7,66 @@
           - wget
         state: present
 
+    - name: Install audio codec packages
+      pacman:
+        name:
+          - flac
+          - wavpack
+          - faac
+          - faad2
+          - libfdk-aac
+          - a52dec
+          - libdca
+          - lame
+          - libmad
+          - libmpcdec
+          - opencore-amr
+          - opus
+          - libvorbis
+          - opencore-amr
+          - speex
+          - libvorbis
+        state: present
+
+    - name: Install image codec packages
+      pacman:
+        name:
+          - jasper
+          - libwebp
+          - libavif
+          - libheif
+          - libjxl
+        state: present
+
+    - name: Install video codec packages
+      pacman:
+        name:
+          - aom
+          - dav1d
+          - rav1e
+          - svt-av1
+          - schroedinger
+          - libdv
+          - x265
+          - libde265
+          - x264
+          - libmpeg2
+          - xvidcore
+          - libtheora
+          - libvpx
+        state: present
+
+    - name: Install gstreamer packages
+      pacman:
+        name:
+          - gstreamer
+          - gst-libav
+          - gst-plugins-bad
+          - gst-plugins-base
+          - gst-plugins-good
+          - gst-plugins-ugly
+        state: present
+
     - name: Install archive packages
       pacman:
         name:
@@ -31,7 +91,6 @@
           - pipewire
           - pipewire-pulse
           - wireplumber
-          - qt6-multimedia-ffmpeg
         state: present
 
     - name: Install development packages

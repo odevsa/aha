@@ -13,6 +13,7 @@
     - name: Install utilities applications
       pacman:
         name:
+          - nautilus
           - gnome-calculator
           - gnome-connections
           - gnome-calendar
@@ -24,6 +25,8 @@
           - simple-scan
           - evince
           - file-roller
+          - gnome-music
+          - totem
         state: present
       when: application.utilities == true
     
