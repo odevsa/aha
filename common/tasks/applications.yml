@@ -16,7 +16,6 @@
         name:
           - gnome-calculator
           - gnome-connections
-          - gnome-weather
           - gnome-calendar
           - gnome-disk-utility
           - baobab
@@ -25,6 +24,7 @@
           - snapshot
           - simple-scan
           - evince
+          - file-roller
         state: present
       when: application.utilities == true
     
