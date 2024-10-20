@@ -117,4 +117,10 @@
         name: bluetooth
         enabled: true
         state: started
+
+    - name: Enable systemd-resolved service
+      systemd:
+        name: systemd-resolved
+        enabled: true
+        state: started
   become: true
