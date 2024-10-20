@@ -5,7 +5,6 @@
         name:
           - btop
           - nvtop
-          - cmatrix
           - fastfetch
           - nano
           - neovim
