@@ -99,7 +99,7 @@
           - base-devel
           - git
           - python
-          - cargo
+          - rust
           - nodejs
           - npm
         state: present
