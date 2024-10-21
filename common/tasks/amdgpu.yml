@@ -1,6 +1,6 @@
 ---
 - block:
-    - name: Install Nvidia drivers
+    - name: Install amdgpu drivers
       pacman:
         name:
           - vulkan-radeon
