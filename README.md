@@ -13,6 +13,21 @@ It is in progress, so please EXECUTE ONLY ONCE.
 
 It`s needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
 
+## What does this do?
+- [x] Update
+- [x] Copy dotfiles (custom dotfiles see envs)
+- [x] Update
+- [x] Codecs (audio, image and video)
+- [x] Main file compressors (zip, unrar, p7zip...)
+- [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire)
+- [x] Popular development packages (git, rust, python, nodejs...)
+- [x] Zsh (set as default, oh-my-posh, oh-my-zsh, sintax-highlight, autosuggestion)
+- [x] Amdgpu (optional in env)
+- [x] Nvidia (optional in env)
+- [x] Fonts (font-awesome, firacode-nerd)
+- [x] Icon Theme (Papirus)
+- [ ] TODO Applications
+
 ## What you will need
 
 - Any distribution based on Arch Linux, preferably a clean installation of Arch Linux with systemd-boot (grub not tested yet).
