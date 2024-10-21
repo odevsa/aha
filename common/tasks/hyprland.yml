@@ -31,7 +31,7 @@
           - network-manager-applet
           - bluez-utils
           - blueman
-          - alacritty
+          - kitty
           - jq
           - imv
           - wl-clipboard
