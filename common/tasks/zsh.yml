@@ -6,12 +6,12 @@
           - zsh
         state: present
 
-    - name: Change default shell
+    - name: "Change default {{ lookup('env', 'USER') }} shell"
       user:
         name: "{{ lookup('env', 'USER') }}"
         shell: /usr/bin/zsh
 
-    - name: Change default shell
+    - name: Change default root shell
       user:
         name: root
         shell: /usr/bin/zsh
