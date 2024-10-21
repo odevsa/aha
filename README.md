@@ -7,10 +7,17 @@ My Dotfiles are here: https://github.com/raphaelbruno/dotfiles
 
 This is for my personal use and it's working in progress, so files can be deleted, things can break, etc. If you want to try it, it`s for your own risk.
 
+## Important
+
+It is in progress, so please EXECUTE ONLY ONCE.
+
+It`s needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
+
 ## What you will need
 
-- Any distribution based on Arch Linux, preferably a clean installation of Arch Linux.
+- Any distribution based on Arch Linux, preferably a clean installation of Arch Linux with systemd-boot (grub not tested yet).
 - Internet connection:
+  - Ethernet
   - Wifi with `iwctl`
     ```
     $ iwctl
@@ -58,9 +65,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland
   ansible-playbook --ask-become-pass main.yml
   ```
 - Input sudo password when it ask for
-
-## Important
-
-It is in progress, so please EXECUTE ONLY ONCE.
-
-It`s needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
