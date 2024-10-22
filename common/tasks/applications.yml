@@ -63,16 +63,10 @@
       pacman:
         name:
           - obs-studio
-        state: present
-      when: application.video == true
-    
-    - name: Install Kadenlive applications
-      pacman:
-        name:
           - kdenlive
         state: present
-      when: aur.enable != true and application.video == true
-    
+      when: application.video == true
+
     - name: Install 3D applications
       pacman:
         name:

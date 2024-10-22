@@ -26,11 +26,4 @@
         name: visual-studio-code-bin
         user: "{{ lookup('env', 'USER') }}"
       when: application.development == true
-
-    - name: Install AUR visual-studio-code-bin
-      aur:
-        dir: "{{ aur.directory }}"
-        name: davinci-resolve
-        user: "{{ lookup('env', 'USER') }}"
-      when: application.video == true
   become: true
