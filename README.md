@@ -22,23 +22,23 @@ It`s needing of some check before to do changes in files of the system yet, so i
 - [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire...)
 - [x] Popular development packages (git, rust, python, nodejs...)
 - [x] Zsh (set as default, oh-my-posh, oh-my-zsh, sintax-highlight, autosuggestion)
-- [x] :radio_button: Amdgpu
-- [x] :radio_button: Nvidia
+- [x] :ballot_box_with_check: Amdgpu
+- [x] :ballot_box_with_check: Nvidia
 - [x] Fonts (font-awesome, firacode-nerd)
 - [x] Icon Theme (Papirus)
 - [x] Terminal Applications (fastfetch, neovim, btop...)
-- [x] :radio_button: Utilities Applications (nautilus, file-roller, snapshot, totem...)
-- [x] :radio_button: Development Applications (spacevim, dbeaver, docker...)
-- [x] :radio_button: Graphical Applications (gimp, inkscape)
-- [x] :radio_button: Multimedia Applications (audacity, obs-studio, kdenlive)
-- [x] :radio_button: 3D Applications (blender, freecad)
-- [x] :radio_button: Browser (firefox|chromium|vivaldi|google-chrome)
-- [x] :radio_button: Laptop battery optimization (autocpufreq)
-- [x] :radio_button: AUR Support (yay)
+- [x] :ballot_box_with_check: Utilities Applications (nautilus, file-roller, snapshot, totem...)
+- [x] :ballot_box_with_check: Development Applications (spacevim, dbeaver, docker...)
+- [x] :ballot_box_with_check: Graphical Applications (gimp, inkscape)
+- [x] :ballot_box_with_check: Multimedia Applications (audacity, obs-studio, kdenlive)
+- [x] :ballot_box_with_check: 3D Applications (blender, freecad)
+- [x] :ballot_box_with_check: Browser (firefox|chromium|vivaldi|google-chrome)
+- [x] :ballot_box_with_check: Laptop battery optimization (autocpufreq)
+- [x] :ballot_box_with_check: AUR Support (yay)
 - [x] Hyprland (kitty, waybar, rofi-wayland, swww, hyprlock, nwg-bar, grim, slurp...)
 - [x] Dysplay Manager (greetd)
 
-:radio_button: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
+:ballot_box_with_check: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## What you will need
 
