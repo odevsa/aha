@@ -15,30 +15,29 @@ It`s needing of some check before to do changes in files of the system yet, so i
 
 ## What does this do?
 - [x] Update
-- [x] Copy dotfiles (custom dotfiles see envs)
-- [x] Update
+- [x] Copy dotfiles (custom dotfiles see: [common/vars/main.yml](common/vars/main.yml))
 - [x] Codecs (audio, image and video)
 - [x] Main file compressors (zip, unrar, p7zip...)
 - [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire...)
 - [x] Popular development packages (git, rust, python, nodejs...)
 - [x] Zsh (set as default, oh-my-posh, oh-my-zsh, sintax-highlight, autosuggestion)
-- [x] :checkered_flag: Amdgpu
-- [x] :checkered_flag: Nvidia
+- [x] :checkered_flag: - Amdgpu
+- [x] :checkered_flag: - Nvidia
 - [x] Fonts (font-awesome, firacode-nerd)
 - [x] Icon Theme (Papirus)
 - [x] Terminal Applications (fastfetch, neovim, btop...)
-- [x] :checkered_flag: Utilities Applications (nautilus, file-roller, snapshot, totem...)
-- [x] :checkered_flag: Development Applications (spacevim, dbeaver, docker...)
-- [x] :checkered_flag: Graphical Applications (gimp, inkscape)
-- [x] :checkered_flag: Multimedia Applications (audacity, obs-studio, kdenlive)
-- [x] :checkered_flag: 3D Applications (blender, freecad)
-- [x] :checkered_flag: Browser (firefox|chromium|vivaldi|google-chrome)
-- [x] :checkered_flag: Laptop battery optimization (autocpufreq)
-- [x] :checkered_flag: AUR Support (yay)
+- [x] :checkered_flag: - Utilities Applications (nautilus, file-roller, snapshot, totem...)
+- [x] :checkered_flag: - Development Applications (spacevim, dbeaver, docker...)
+- [x] :checkered_flag: - Graphical Applications (gimp, inkscape)
+- [x] :checkered_flag: - Multimedia Applications (audacity, obs-studio, kdenlive)
+- [x] :checkered_flag: - 3D Applications (blender, freecad)
+- [x] :checkered_flag: - Browser (firefox | chromium | vivaldi | google-chrome)
+- [x] :checkered_flag: - Laptop battery optimization (autocpufreq)
+- [x] :checkered_flag: - AUR Support (yay)
 - [x] Hyprland (kitty, waybar, rofi-wayland, swww, hyprlock, nwg-bar, grim, slurp...)
 - [x] Dysplay Manager (greetd)
 
-:checkered_flag: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
+:checkered_flag: = Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## What you will need
 
