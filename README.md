@@ -38,7 +38,7 @@ It`s needing of some check before to do changes in files of the system yet, so i
 - [x] Hyprland (kitty, waybar, rofi-wayland, swww, hyprlock, nwg-bar, grim, slurp...)
 - [x] Dysplay Manager (greetd)
 
-:radio_button: Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
+:radio_button: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## What you will need
 
