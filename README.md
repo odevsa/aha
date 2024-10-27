@@ -22,23 +22,23 @@ It`s needing of some check before to do changes in files of the system yet, so i
 - [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire...)
 - [x] Popular development packages (git, rust, python, nodejs...)
 - [x] Zsh (set as default, oh-my-posh, oh-my-zsh, sintax-highlight, autosuggestion)
-- [x] :ballot_box_with_check: Amdgpu
-- [x] :ballot_box_with_check: Nvidia
+- [x] :checkered_flag: Amdgpu
+- [x] :checkered_flag: Nvidia
 - [x] Fonts (font-awesome, firacode-nerd)
 - [x] Icon Theme (Papirus)
 - [x] Terminal Applications (fastfetch, neovim, btop...)
-- [x] :ballot_box_with_check: Utilities Applications (nautilus, file-roller, snapshot, totem...)
-- [x] :ballot_box_with_check: Development Applications (spacevim, dbeaver, docker...)
-- [x] :ballot_box_with_check: Graphical Applications (gimp, inkscape)
-- [x] :ballot_box_with_check: Multimedia Applications (audacity, obs-studio, kdenlive)
-- [x] :ballot_box_with_check: 3D Applications (blender, freecad)
-- [x] :ballot_box_with_check: Browser (firefox|chromium|vivaldi|google-chrome)
-- [x] :ballot_box_with_check: Laptop battery optimization (autocpufreq)
-- [x] :ballot_box_with_check: AUR Support (yay)
+- [x] :checkered_flag: Utilities Applications (nautilus, file-roller, snapshot, totem...)
+- [x] :checkered_flag: Development Applications (spacevim, dbeaver, docker...)
+- [x] :checkered_flag: Graphical Applications (gimp, inkscape)
+- [x] :checkered_flag: Multimedia Applications (audacity, obs-studio, kdenlive)
+- [x] :checkered_flag: 3D Applications (blender, freecad)
+- [x] :checkered_flag: Browser (firefox|chromium|vivaldi|google-chrome)
+- [x] :checkered_flag: Laptop battery optimization (autocpufreq)
+- [x] :checkered_flag: AUR Support (yay)
 - [x] Hyprland (kitty, waybar, rofi-wayland, swww, hyprlock, nwg-bar, grim, slurp...)
 - [x] Dysplay Manager (greetd)
 
-:ballot_box_with_check: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
+:checkered_flag: - Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## What you will need
 
