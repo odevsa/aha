@@ -13,8 +13,7 @@ application:
   utilities: true
   development: true
   graphical: true
-  audio: true
-  video: true
+  multimedia: true
   three_dimensional: true
 
 nvidia:

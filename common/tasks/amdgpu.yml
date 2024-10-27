@@ -6,5 +6,6 @@
           - vulkan-radeon
           - libva-mesa-driver
           - mesa-vdpau
+          - radeontop
         state: present
   become: true

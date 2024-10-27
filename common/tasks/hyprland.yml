@@ -23,7 +23,7 @@
           - hyprland
           - hyprpicker
           - waybar
-          - rofi
+          - rofi-wayland
           - swww
           - swayidle
           - hyprlock

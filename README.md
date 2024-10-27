@@ -19,14 +19,26 @@ It`s needing of some check before to do changes in files of the system yet, so i
 - [x] Update
 - [x] Codecs (audio, image and video)
 - [x] Main file compressors (zip, unrar, p7zip...)
-- [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire)
+- [x] Multimedia core (mesa, vulkan, network, bluetooth, pipewire...)
 - [x] Popular development packages (git, rust, python, nodejs...)
 - [x] Zsh (set as default, oh-my-posh, oh-my-zsh, sintax-highlight, autosuggestion)
-- [x] Amdgpu (optional in env)
-- [x] Nvidia (optional in env)
+- [x] :radio_button: Amdgpu
+- [x] :radio_button: Nvidia
 - [x] Fonts (font-awesome, firacode-nerd)
 - [x] Icon Theme (Papirus)
-- [ ] TODO Applications
+- [x] Terminal Applications (fastfetch, neovim, btop...)
+- [x] :radio_button: Utilities Applications (nautilus, file-roller, snapshot, totem...)
+- [x] :radio_button: Development Applications (spacevim, dbeaver, docker...)
+- [x] :radio_button: Graphical Applications (gimp, inkscape)
+- [x] :radio_button: Multimedia Applications (audacity, obs-studio, kdenlive)
+- [x] :radio_button: 3D Applications (blender, freecad)
+- [x] :radio_button: Browser (firefox|chromium|vivaldi|google-chrome)
+- [x] :radio_button: Laptop battery optimization (autocpufreq)
+- [x] :radio_button: AUR Support (yay)
+- [x] Hyprland (kitty, waybar, rofi-wayland, swww, hyprlock, nwg-bar, grim, slurp...)
+- [x] Dysplay Manager (greetd)
+
+:radio_button: Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## What you will need
 

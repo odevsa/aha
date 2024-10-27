@@ -4,7 +4,6 @@
       pacman:
         name:
           - btop
-          - nvtop
           - fastfetch
           - nano
           - neovim
@@ -52,20 +51,14 @@
         state: present
       when: application.graphical == true
     
-    - name: Install audio applications
+    - name: Install multimedia applications
       pacman:
         name:
           - audacity
-        state: present
-      when: application.audio == true
-    
-    - name: Install video applications
-      pacman:
-        name:
           - obs-studio
           - kdenlive
         state: present
-      when: application.video == true
+      when: application.multimedia == true
 
     - name: Install 3D applications
       pacman:
