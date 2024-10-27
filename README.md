@@ -39,6 +39,24 @@ It`s needing of some check before to do changes in files of the system yet, so i
 
 :checkered_flag: = Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
+## Shortcuts
+[SUPER] Applications
+[SUPER]+[T] Terminal
+[SUPER]+[Q] Close active window
+[SUPER]+[E] File manager
+[SUPER]+[F] Toggle floating
+[SUPER]+[M] Restart Hyprland
+[SUPER]+[B] Restart bar
+[SUPER]+[L] Lock screen
+[SUPER]+[ESC] Power options
+
+## TODO
+- [ ] Fix: US Keyboard layout cedilla module to write `ç` with [']+[c]
+- [ ] Fix: GTK apps dalays to open at the first time
+- [ ] Fix: GTK portal icon theme
+- [ ] Fix: AUR ask become password many times
+- [ ] Use rofi as power options instead nwg-bar
+
 ## What you will need
 
 - Any distribution based on Arch Linux, preferably a clean installation of Arch Linux with systemd-boot (grub not tested yet).
