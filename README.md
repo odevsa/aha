@@ -56,7 +56,7 @@ It`s needing of some check before to do changes in files of the system yet, so i
 - [ ] Fix: GTK portal icon theme
 - [ ] Fix: AUR ask become password many times
 - [ ] Use color scheme in terminal apps
-- [ ] Use rofi as power options instead nwg-bar
+- [ ] Save file association
 
 ## What you will need
 
