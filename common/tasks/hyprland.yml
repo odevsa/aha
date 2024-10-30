@@ -38,6 +38,7 @@
           - grim
           - slurp
           - sox
+          - python-pywal
         state: present
   become: true
 
