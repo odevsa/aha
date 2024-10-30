@@ -9,9 +9,9 @@ This is for my personal use and it's working in progress, so files can be delete
 
 ## Important
 
-It is in progress, so please EXECUTE ONLY ONCE.
+It's in progress, so please EXECUTE ONLY ONCE.
 
-It`s needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
+It's needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
 
 ## What does this do?
 - [x] Update
@@ -40,15 +40,15 @@ It`s needing of some check before to do changes in files of the system yet, so i
 :checkered_flag: = Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## Shortcuts
-[SUPER] Applications
-[SUPER]+[T] Terminal
-[SUPER]+[Q] Close active window
-[SUPER]+[E] File manager
-[SUPER]+[F] Toggle floating
-[SUPER]+[M] Restart Hyprland
-[SUPER]+[B] Restart bar
-[SUPER]+[L] Lock screen
-[SUPER]+[ESC] Power options
+- [SUPER] Applications
+- [SUPER]+[T] Terminal
+- [SUPER]+[Q] Close active window
+- [SUPER]+[E] File manager
+- [SUPER]+[F] Toggle floating
+- [SUPER]+[M] Restart Hyprland
+- [SUPER]+[B] Restart bar
+- [SUPER]+[L] Lock screen
+- [SUPER]+[ESC] Power options
 
 ## TODO
 - [ ] Fix: US Keyboard layout cedilla module to write `ç` with [']+[c]
