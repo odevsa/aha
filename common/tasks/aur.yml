@@ -20,6 +20,13 @@
         user: "{{ lookup('env', 'USER') }}"
       when: browser == 'google-chrome'
 
+    - name: Install AUR onlyoffice-bin
+      aur:
+        dir: "{{ aur.directory }}"
+        name: onlyoffice-bin
+        user: "{{ lookup('env', 'USER') }}"
+      when: application.utilities == true
+
     - name: Install AUR visual-studio-code-bin
       aur:
         dir: "{{ aur.directory }}"
