@@ -83,6 +83,8 @@ It's needing of some check before to do changes in files of the system yet, so i
 
 ## Automatic Install
 
+Just run this code and see the magic
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)"
 ```
