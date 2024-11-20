@@ -45,3 +45,6 @@
 - include_tasks: hyprland.yml
 
 - include_tasks: display-manager.yml
+
+- name: Reboot the system
+  command: reboot
