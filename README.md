@@ -56,11 +56,12 @@ It's needing of some check before to do changes in files of the system yet, so i
 ## TODO
 
 - [ ] Fix: US Keyboard layout cedilla module to write `ç` with [']+[c]
-- [ ] Fix: GTK apps dalays to open at the first time
+- [ ] Fix: GTK apps delays to open at the first time
 - [ ] Fix: GTK portal icon theme
 - [ ] Fix: AUR ask become password many times
 - [ ] Use color scheme in terminal apps
 - [ ] Save file association
+- [ ] Remake bar, maybe using AGS
 
 ## What you will need
 
