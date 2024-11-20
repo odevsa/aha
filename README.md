@@ -81,10 +81,6 @@ It's needing of some check before to do changes in files of the system yet, so i
     $ nmcli device wifi connect "<SSID>" --ask
     ```
 
-## Before Install
-
-Maybe this has more applications then you need, so you may want to do the `Manual Install` and modify the [common/vars/main.yml](common/vars/main.yml) file before `Run ansible`
-
 ## Automatic Install
 
 ```
