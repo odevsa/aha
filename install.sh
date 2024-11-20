@@ -62,7 +62,6 @@ if [ "$NO_NVIDIA" = true ] || [ "$NO_GPU" = true ] || [ "$ONLY_CORE" = true ]; t
 fi
 
 if [ "$ONLY_CORE" = true ] || [ "$NO_APPS" = true ]; then
-    update_yaml_block_value "application" "utilities" "false" "$VARS_FILE"
     update_yaml_block_value "application" "development" "false" "$VARS_FILE"
     update_yaml_block_value "application" "graphical" "false" "$VARS_FILE"
     update_yaml_block_value "application" "multimedia" "false" "$VARS_FILE"

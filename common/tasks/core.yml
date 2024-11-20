@@ -100,7 +100,7 @@
           - git
           - python
           - rust
-          - nodejs
+          - nodejs-lts-iron
           - npm
         state: present
   become: true
