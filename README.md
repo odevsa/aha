@@ -99,7 +99,7 @@ You may want to use flags to customize installation
 | `--no-apps`   | Disables all application-related installations.                                                   |
 | `--only-core` | Installs only core system components, disabling other features like applications and GPU drivers. |
 
-If you don't want Nvidia driver and default applications, you can try:
+For example: If you don't want Nvidia driver and default applications, you can try:
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)" -- --no-nvidia --no-apps
