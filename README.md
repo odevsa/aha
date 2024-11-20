@@ -1,4 +1,5 @@
-# arch-hyprland-ansible
+# AHA - Arch Hyprland Ansible
+
 A simple intallation of Hyprland with my Dotfiles into Arch Linux and automated by ansible.
 
 My Dotfiles are here: https://github.com/raphaelbruno/dotfiles
@@ -14,6 +15,7 @@ It's in progress, so please EXECUTE ONLY ONCE.
 It's needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
 
 ## What does this do?
+
 - [x] Update
 - [x] Copy dotfiles (custom dotfiles see: [common/vars/main.yml](common/vars/main.yml))
 - [x] Codecs (audio, image and video)
@@ -40,6 +42,7 @@ It's needing of some check before to do changes in files of the system yet, so i
 :checkered_flag: = Optional installation, see: [common/vars/main.yml](common/vars/main.yml)
 
 ## Shortcuts
+
 - [SUPER] Applications
 - [SUPER]+[T] Terminal
 - [SUPER]+[Q] Close active window
@@ -51,6 +54,7 @@ It's needing of some check before to do changes in files of the system yet, so i
 - [SUPER]+[ESC] Power options
 
 ## TODO
+
 - [ ] Fix: US Keyboard layout cedilla module to write `ç` with [']+[c]
 - [ ] Fix: GTK apps dalays to open at the first time
 - [ ] Fix: GTK portal icon theme
@@ -62,13 +66,16 @@ It's needing of some check before to do changes in files of the system yet, so i
 
 - Any distribution based on Arch Linux, preferably a clean installation of Arch Linux with systemd-boot (grub not tested yet).
 - Internet connection:
+
   - Ethernet
   - Wifi with `iwctl`
+
     ```
     $ iwctl
 
     [iwctl]# station <DEVICE> connect "<SSID>"
     ```
+
   - Wifi with `NetworkManager`
     ```
     $ nmcli device wifi connect "<SSID>" --ask
@@ -78,11 +85,26 @@ It's needing of some check before to do changes in files of the system yet, so i
 
 Maybe this has more applications then you need, so you may want to do the `Manual Install` and modify the [common/vars/main.yml](common/vars/main.yml) file before `Run ansible`
 
-
 ## Automatic Install
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland-ansible/main/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)"
+```
+
+You may want to use flags to customize installation
+
+| Flag          | Description                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| `--no-amdgpu` | Disables the installation of AMD GPU (amdgpu).                                                    |
+| `--no-nvidia` | Disables the installation of NVIDIA GPU (nvidia).                                                 |
+| `--no-gpu`    | Disables the installation of both AMD and NVIDIA GPUs.                                            |
+| `--no-apps`   | Disables all application-related installations.                                                   |
+| `--only-core` | Installs only core system components, disabling other features like applications and GPU drivers. |
+
+If you don't want Nvidia driver and default applications, you can try:
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)" -- --no-nvidia --no-apps
 ```
 
 ## Manual Install
@@ -93,17 +115,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/arch-hyprland
   sudo pacman -S git python ansible
   ```
 
-- Clone the repo with submodules 
+- Clone the repo with submodules
 
   ```
-  git clone --recurse-submodules --remote-submodules https://github.com/raphaelbruno/arch-hyprland-ansible.git
+  git clone --recurse-submodules --remote-submodules https://github.com/raphaelbruno/aha.git
   ```
 
 - Enter in folder
 
   ```
-  cd arch-hyprland-ansible
+  cd aha
   ```
+
+- Customize the file [common/vars/main.yml](common/vars/main.yml) as you need
 
 - Run ansible
   ```
