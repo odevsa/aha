@@ -25,7 +25,7 @@
           - waybar
           - rofi-wayland
           - swww
-          - swayidle
+          - hypridle
           - hyprlock
           - nwg-bar
           - network-manager-applet
@@ -71,7 +71,7 @@
         backrefs: true
       loop: "{{ linux_entries.files }}"
   become: true
-  
+
 - block:
     - name: Set chromium to use wayland
       replace:
