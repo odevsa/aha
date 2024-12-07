@@ -46,6 +46,7 @@ It's needing of some check before to do changes in files of the system yet, so i
 - [SUPER] Applications
 - [SUPER]+[T] Terminal
 - [SUPER]+[Q] Close active window
+- [SUPER]+[W] Change randomly wallpaper in `~/Pictures/Wallpapers`
 - [SUPER]+[E] File manager
 - [SUPER]+[F] Toggle floating
 - [SUPER]+[M] Restart Hyprland
@@ -59,7 +60,6 @@ It's needing of some check before to do changes in files of the system yet, so i
 - [ ] Fix: GTK apps delays to open at the first time
 - [ ] Fix: GTK portal icon theme
 - [ ] Fix: AUR ask become password many times
-- [ ] Use color scheme in terminal apps
 - [ ] Save file association
 - [ ] Remake bar, maybe using AGS
 
