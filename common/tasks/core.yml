@@ -5,6 +5,7 @@
         name:
           - curl
           - wget
+          - usbutils
         state: present
 
     - name: Install audio codec packages
