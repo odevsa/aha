@@ -51,6 +51,7 @@ It's needing of some check before to do changes in files of the system yet, so i
 - [SUPER]+[F] Toggle floating
 - [SUPER]+[M] Restart Hyprland
 - [SUPER]+[B] Restart bar
+- [SUPER]+[SHIFT]+[B] Hide bar
 - [SUPER]+[L] Lock screen
 - [SUPER]+[ESC] Power options
 
