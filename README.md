@@ -14,6 +14,17 @@ It's in progress, so please EXECUTE ONLY ONCE.
 
 It's needing of some check before to do changes in files of the system yet, so if you execute more then one time, the changes will be duplicated in files.
 
+## Screenshots
+
+![Lockscreen](assets/lockscreen.jpg)
+![Applications](assets/apps.jpg)
+![Power Options](assets/power.jpg)
+
+|                                    |                                    |
+| :--------------------------------: | :--------------------------------: |
+| ![Desktop 1](assets/desktop-1.jpg) | ![Desktop 2](assets/desktop-2.jpg) |
+| ![Desktop 3](assets/desktop-3.jpg) | ![Desktop 4](assets/desktop-4.jpg) |
+
 ## What does this do?
 
 - [x] Update
