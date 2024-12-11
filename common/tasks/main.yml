@@ -1,5 +1,11 @@
 ---
 - block:
+    - name: Uncomment ParallelDownloads in pacman.conf
+      replace:
+        path: /etc/pacman.conf
+        regexp: "^#.*ParallelDownloads(.*)$"
+        replace: ParallelDownloads\1
+
     - name: Update package cache
       pacman:
         update_cache: true
