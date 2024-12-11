@@ -27,36 +27,28 @@
   name: Install Oh My Posh
 
 - block:
-    - name: Clone temporary oh-my-zsh
-      git:
-        repo: https://github.com/robbyrussell/oh-my-zsh.git
-        dest: /tmp/.oh-my-zsh
-        update: true
+    - name: Create plugins temporary directory
+      file:
+        path: /tmp/.antigen
+        state: directory
 
-    - name: Clone temporary zsh-syntax-highlighting
-      git:
-        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-        dest: /tmp/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-        update: true
+    - name: Copy antigen.zsh
+      get_url:
+        url: https://git.io/antigen
+        dest: /tmp/.antigen/antigen.zsh
 
-    - name: Clone temporary zsh-autosuggestions
-      git:
-        repo: https://github.com/zsh-users/zsh-autosuggestions.git
-        dest: /tmp/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-        update: true
-
-    - name: Copy oh-my-zsh to ~/
+    - name: Copy /tmp/.antigen to ~/.antigen
       copy:
-        src: /tmp/.oh-my-zsh/
-        dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+        src: /tmp/.antigen/
+        dest: "{{ lookup('env', 'HOME') }}/.antigen"
         remote_src: true
 
-    - name: Copy oh-my-zsh to root
+    - name: Copy /tmp/.antigen to /root/.antigen
       copy:
-        src: /tmp/.oh-my-zsh/
-        dest: "/root/.oh-my-zsh"
+        src: /tmp/.antigen/
+        dest: "/root/.antigen"
         remote_src: true
       become: true
 
   become: false
-  name: Install Oh My Zsh
+  name: Install Antigen plugin manager
