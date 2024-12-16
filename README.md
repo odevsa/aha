@@ -2,7 +2,7 @@
 
 A simple intallation of Hyprland with my Dotfiles into Arch Linux and automated by ansible.
 
-My Dotfiles are here: https://github.com/raphaelbruno/dotfiles
+My Dotfiles are here: https://github.com/odevsa/dotfiles
 
 ## Disclaimer
 
@@ -99,7 +99,7 @@ It's needing of some check before to do changes in files of the system yet, so i
 Just run this code and see the magic
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/odevsa/aha/main/install.sh)"
 ```
 
 You may want to use flags to customize installation
@@ -115,7 +115,7 @@ You may want to use flags to customize installation
 For example: If you don't want Nvidia driver and default applications, you can try:
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/install.sh)" -- --no-nvidia --no-apps
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/odevsa/aha/main/install.sh)" -- --no-nvidia --no-apps
 ```
 
 ## Manual Install
@@ -129,7 +129,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/raphaelbruno/aha/main/inst
 - Clone the repo with submodules
 
   ```
-  git clone --recurse-submodules --remote-submodules https://github.com/raphaelbruno/aha.git
+  git clone --recurse-submodules --remote-submodules https://github.com/odevsa/aha.git
   ```
 
 - Enter in folder

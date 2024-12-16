@@ -4,7 +4,7 @@ browser: google-chrome # firefox, chromium, vivaldi, google-chrome (depends on a
 dotfiles:
   install: true
   clear_before: true
-  url: https://github.com/raphaelbruno/dotfiles
+  url: https://github.com/odevsa/dotfiles
 
 amdgpu:
   install: true

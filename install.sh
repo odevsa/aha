@@ -20,7 +20,7 @@ for package in "${packages[@]}"; do
     fi
 done
 
-git clone --recurse-submodules --remote-submodules https://github.com/raphaelbruno/aha.git $TMP_DIR
+git clone --recurse-submodules --remote-submodules https://github.com/odevsa/aha.git $TMP_DIR
 
 for arg in "$@"; do
     case $arg in
