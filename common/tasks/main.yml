@@ -1,19 +1,6 @@
 ---
-- block:
-    - name: Uncomment ParallelDownloads in pacman.conf
-      replace:
-        path: /etc/pacman.conf
-        regexp: "^#.*ParallelDownloads(.*)$"
-        replace: ParallelDownloads\1
 
-    - name: Update package cache
-      pacman:
-        update_cache: true
-
-    - name: Upgrade all installed packages
-      pacman:
-        upgrade: true
-  become: true
+- include_tasks: pacman.yml
 
 - include_tasks: dotfiles.yml
   when: dotfiles.install == true

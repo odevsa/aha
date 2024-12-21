@@ -1,0 +1,28 @@
+---
+- block:
+    - name: Uncomment Color in pacman.conf
+      replace:
+        path: /etc/pacman.conf
+        regexp: "^#.*Color(.*)$"
+        replace: Color
+
+    - name: Added ILoveCandy in pacman.conf
+      lineinfile:
+        path: /etc/pacman.conf
+        line: 'ILoveCandy'
+        insertafter: '^.*Misc options.*$'
+    
+    - name: Uncomment ParallelDownloads in pacman.conf
+      replace:
+        path: /etc/pacman.conf
+        regexp: "^#.*ParallelDownloads(.*)$"
+        replace: ParallelDownloads = 10
+
+    - name: Update package cache
+      pacman:
+        update_cache: true
+
+    - name: Upgrade all installed packages
+      pacman:
+        upgrade: true
+  become: true
