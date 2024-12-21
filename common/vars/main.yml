@@ -24,6 +24,5 @@ autocpufreq: # Laptop battery optimization
 
 aur:
   enable: true
-  directory: "{{ lookup('env', 'HOME') }}/.aur"
   packages:
     - yay

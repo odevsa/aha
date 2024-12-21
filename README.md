@@ -71,7 +71,6 @@ It's needing of some check before to do changes in files of the system yet, so i
 - [ ] Fix: US Keyboard layout cedilla module to write `ç` with [']+[c]
 - [ ] Fix: GTK apps delays to open at the first time
 - [ ] Fix: GTK portal icon theme
-- [ ] Fix: AUR ask become password many times
 - [ ] Save file association
 - [ ] Remake bar, maybe using AGS
 
@@ -142,6 +141,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/odevsa/aha/main/install.sh
 
 - Run ansible
   ```
-  ansible-playbook --ask-become-pass main.yml
+  ansible-playbook main.yml
   ```
 - Input sudo password when it ask for

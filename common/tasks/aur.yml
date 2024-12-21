@@ -1,36 +1,62 @@
 ---
+
+- name: Check if Yay is installed
+  command: which yay
+  register: yay_check
+  failed_when: false
+
 - block:
-    - name: Create AUR directory
+    - name: Install Yay dependencies
+      pacman:
+        name:
+          - base-devel
+          - git
+        state: present
+        update_cache: true
+      become: true
+
+    - name: Remove existing /tmp/yay
       file:
-        path: "{{ aur.directory }}"
-        state: directory
+        path: "/tmp/yay"
+        state: absent
+      become: true
+
+    - name: Clone Yay repository
+      git:
+        repo: https://aur.archlinux.org/yay.git
+        dest: /tmp/yay
+        clone: yes
+        force: yes
+
+    - name: Build Yay
+      command: makepkg -s --noconfirm
+      args:
+        chdir: /tmp/yay
+
+    - name: Install Yay
+      pacman:
+        name: "{{ item }}"
+        state: present
+      with_fileglob:
+        - /tmp/yay/*.pkg.tar.zst
+      become: true
+  when: yay_check.rc != 0
   become: false
 
 - block:
-    - name: Install AUR base packages
-      aur:
-        dir: "{{ aur.directory }}"
-        name: "{{ aur.packages }}"
-        user: "{{ lookup('env', 'USER') }}"
-
     - name: Install AUR google-chrome
-      aur:
-        dir: "{{ aur.directory }}"
-        name: google-chrome
-        user: "{{ lookup('env', 'USER') }}"
+      command: yay -S --noconfirm google-chrome
       when: browser == 'google-chrome'
+      become_user: "{{ lookup('env', 'USER') }}"
 
     - name: Install AUR onlyoffice-bin
-      aur:
-        dir: "{{ aur.directory }}"
-        name: onlyoffice-bin
-        user: "{{ lookup('env', 'USER') }}"
+      command: yay -S --noconfirm onlyoffice-bin
       when: application.utilities == true
+      become_user: "{{ lookup('env', 'USER') }}"
 
     - name: Install AUR visual-studio-code-bin
-      aur:
-        dir: "{{ aur.directory }}"
-        name: visual-studio-code-bin
-        user: "{{ lookup('env', 'USER') }}"
+      command: yay -S --noconfirm visual-studio-code-bin
       when: application.development == true
-  become: true
+      become_user: "{{ lookup('env', 'USER') }}"
+  when: yay_check.rc == 0
+  become: false
