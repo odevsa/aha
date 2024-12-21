@@ -125,10 +125,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/odevsa/aha/main/install.sh
   sudo pacman -S git python ansible
   ```
 
-- Clone the repo with submodules
+- Clone the repo
 
   ```
-  git clone --recurse-submodules --remote-submodules https://github.com/odevsa/aha.git
+  git clone https://github.com/odevsa/aha.git
   ```
 
 - Enter in folder
