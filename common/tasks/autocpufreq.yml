@@ -13,5 +13,4 @@
 
     - name: Install daemon for automatic CPU
       command: "auto-cpufreq --install"
-      failed_when: false
   become: true
