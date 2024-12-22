@@ -1,4 +1,8 @@
 ---
+- name: Starting Installation...
+  debug:
+    msg: It could be necessary type your password
+  become_user: "{{ lookup('env', 'USER') }}"
 
 - include_tasks: pacman.yml
 
