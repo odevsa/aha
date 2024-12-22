@@ -23,7 +23,6 @@
 
     - name: Install AUR google-chrome
       command: yay -S --noconfirm google-chrome
-      when: browser == 'google-chrome'
       become_user: "{{ lookup('env', 'USER') }}"
       when: aur.enable == true and browser == 'google-chrome'
   become: true
