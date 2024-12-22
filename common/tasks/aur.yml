@@ -34,6 +34,7 @@
       command: makepkg -s --noconfirm
       args:
         chdir: /tmp/yay
+      become_user: "{{ lookup('env', 'USER') }}"
       when: yay_check.rc != 0
 
     - name: Install Yay
