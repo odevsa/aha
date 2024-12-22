@@ -1,11 +1,10 @@
 ---
-
-- name: Check if Yay is installed
-  command: which yay
-  register: yay_check
-  failed_when: false
-
 - block:
+    - name: Check if Yay is installed
+      command: which yay
+      register: yay_check
+      failed_when: false
+
     - name: Install Yay dependencies
       pacman:
         name:
@@ -14,12 +13,14 @@
         state: present
         update_cache: true
       become: true
+      when: yay_check.rc != 0
 
     - name: Remove existing /tmp/yay
       file:
         path: "/tmp/yay"
         state: absent
       become: true
+      when: yay_check.rc != 0
 
     - name: Clone Yay repository
       git:
@@ -27,11 +28,13 @@
         dest: /tmp/yay
         clone: yes
         force: yes
+      when: yay_check.rc != 0
 
     - name: Build Yay
       command: makepkg -s --noconfirm
       args:
         chdir: /tmp/yay
+      when: yay_check.rc != 0
 
     - name: Install Yay
       pacman:
@@ -40,23 +43,5 @@
       with_fileglob:
         - /tmp/yay/*.pkg.tar.zst
       become: true
-  when: yay_check.rc != 0
-  become: false
-
-- block:
-    - name: Install AUR google-chrome
-      command: yay -S --noconfirm google-chrome
-      when: browser == 'google-chrome'
-      become_user: "{{ lookup('env', 'USER') }}"
-
-    - name: Install AUR onlyoffice-bin
-      command: yay -S --noconfirm onlyoffice-bin
-      when: application.utilities == true
-      become_user: "{{ lookup('env', 'USER') }}"
-
-    - name: Install AUR visual-studio-code-bin
-      command: yay -S --noconfirm visual-studio-code-bin
-      when: application.development == true
-      become_user: "{{ lookup('env', 'USER') }}"
-  when: yay_check.rc == 0
+      when: yay_check.rc != 0
   become: false

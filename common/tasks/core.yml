@@ -3,7 +3,6 @@
     - name: Install general packages
       pacman:
         name:
-          - reflector
           - curl
           - wget
           - usbutils
@@ -108,26 +107,6 @@
   become: true
 
 - block:
-    - name: Copy reflector service files
-      copy:
-        src: common/files/etc/systemd/system/
-        dest: /etc/systemd/system/
-        remote_src: true
-  become: true
-
-- block:
-    - name: Enable and start the service reflector.service
-      systemd:
-        name: reflector.service
-        enabled: true
-        state: started
-
-    - name: Enable and start the service reflector.timer
-      systemd:
-        name: reflector.timer
-        enabled: true
-        state: started
-
     - name: Enable and start the service NetworkManager
       systemd:
         name: NetworkManager

@@ -38,6 +38,12 @@
         state: present
       when: aur.enable != true and application.utilities == true
 
+    - name: Install AUR onlyoffice-bin
+      command: yay -S --noconfirm onlyoffice-bin
+      when: application.utilities == true
+      become_user: "{{ lookup('env', 'USER') }}"
+      when: aur.enable == true and application.utilities == true
+
     - name: Install development applications
       pacman:
         name:
@@ -51,6 +57,12 @@
           - code
         state: present
       when: aur.enable != true and application.development == true
+
+    - name: Install AUR visual-studio-code-bin
+      command: yay -S --noconfirm visual-studio-code-bin
+      when: application.development == true
+      become_user: "{{ lookup('env', 'USER') }}"
+      when: aur.enable == true and application.development == true
 
     - name: Install graphical applications
       pacman:

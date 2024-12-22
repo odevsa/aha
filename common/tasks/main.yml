@@ -2,6 +2,9 @@
 
 - include_tasks: pacman.yml
 
+- include_tasks: aur.yml
+  when: aur.enable == true
+
 - include_tasks: dotfiles.yml
   when: dotfiles.install == true
 
@@ -31,9 +34,6 @@
 
 - include_tasks: autocpufreq.yml
   when: autocpufreq.install == true
-
-- include_tasks: aur.yml
-  when: aur.enable == true
 
 - include_tasks: hyprland.yml
 

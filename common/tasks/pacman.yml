@@ -1,5 +1,31 @@
 ---
 - block:
+    - name: Install reflector
+      pacman:
+        name:
+          - reflector
+        state: present
+
+    - name: Copy reflector service files
+      copy:
+        src: common/files/etc/systemd/system/
+        dest: /etc/systemd/system/
+        remote_src: true
+
+    - name: Enable and start the service reflector.service
+      systemd:
+        name: reflector.service
+        enabled: true
+        state: started
+
+    - name: Enable and start the service reflector.timer
+      systemd:
+        name: reflector.timer
+        enabled: true
+        state: started
+  become: true
+
+- block:
     - name: Uncomment Color in pacman.conf
       replace:
         path: /etc/pacman.conf
