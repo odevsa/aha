@@ -26,7 +26,7 @@
         state: absent
       with_items:
         - "{{ lookup('env', 'HOME') }}/.git"
-        - "{{ lookup('env', 'HOME') }}/.install.sh"
+        - "{{ lookup('env', 'HOME') }}/install.sh"
         - "{{ lookup('env', 'HOME') }}/README.md"
   become: false
 
