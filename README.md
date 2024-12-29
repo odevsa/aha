@@ -2,7 +2,7 @@
 
 A simple intallation of Hyprland with my Dotfiles into Arch Linux and automated by ansible.
 
-My Dotfiles are here: https://github.com/odevsa/dotfiles
+My Dotfiles are here: https://github.com/odevsa/dotfiles-aha
 
 ## Disclaimer
 
